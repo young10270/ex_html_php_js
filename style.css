@@ -31,4 +31,5 @@ nav ul{
 article{
   float:left;
   padding: 20px;
+  width: 500px;
 }
