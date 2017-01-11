@@ -39,9 +39,24 @@
       <p>
         본문 : <textarea name="description"></textarea>
       </p>
+      <input type="hidden" role="uploadcare-uploader" />
       <input type="submit" name="name">
     </form>
   </article>
+  <script>
+    UPLOADCARE_PUBLIC_KEY = "a5e307020d58f5703c31";
+  </script>
+  <script charset="utf-8" src="//ucarecdn.com/libs/widget/2.10.2/uploadcare.full.min.js"></script>
+
+  <script>
+    //role의 값이 uploadcare-uploader인 태그를 업로드 위젯으로 만들어라.
+    var singleWidget = uploadcare.singleWidget('[role=uploadcare-uploader]');
+    //그 위젯을 통해서 업로드가 끝났을 떄
+    singleWidget.onUploadComplete(function(info){
+      //id 값이 description인 태그의 값 뒤에 업로드한 이미지 파일의 주소를 이미지 태그와 함께 첨부해라.
+      document.getElementById('description').value = document.getElementById('description').value + '<img src ="'+info.cdnUrl+'">';
+    });
+  </script>
 
 </body>
 </html>
