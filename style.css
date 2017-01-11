@@ -10,6 +10,10 @@ header {
   border-bottom: solid 1px gray;
   padding:20px;
 }
+header img{
+  float: right;
+  height: 100px;
+}
 nav{
   border-right: solid 1px gray;
   width:200px;
