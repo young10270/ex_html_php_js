@@ -1,20 +1,30 @@
+body.white{
+  background-color: white;
+  color: black;
+}
+body.black{
+  background-color: black;
+  color: white;
+}
 header {
-  border-bottom: solid 1px grey;
+  border-bottom: solid 1px gray;
   padding:20px;
 }
 nav{
-  border-right: solid 1px grey;
+  border-right: solid 1px gray;
   width:200px;
   height:600px;
   float: left;
 }
-nav ol{
+nav ul{
   list-style: none;
+}
+
+#control{
+  float: right;
+  padding:20px;
 }
 article{
   float:left;
   padding: 20px;
-}
-h2{
-  font-style: oblique;
 }
