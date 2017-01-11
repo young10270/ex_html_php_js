@@ -1,3 +1,8 @@
+<?php
+  $conn = mysqli_connect("localhost","root",'a789624');
+  mysqli_select_db($conn,"opentutorials");
+  $result = mysqli_query($conn,"SELECT * FROM topic");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,9 +16,11 @@
 	</header>
 	<nav>
 	<ul>
-    <?php
-    echo file_get_contents("list.txt")
-    ?>
+  <?php
+    while($row = mysqli_fetch_assoc($result)){
+      echo '<li><a href="http://localhost/index_html.php?id='.$row['id'].'">'.$row['title'].'</a></li>'."\n";
+    }
+  ?>
 	</ul>
 	</nav>
 
@@ -23,9 +30,9 @@
 	</div>
   <article>
     <?php
-    if(empty($_GET['id'])==false){
-    echo file_get_contents($_GET['id'].".txt");
-  }
+      if(empty($_GET['id'])==false){
+        echo file_get_contents($_GET['id'].".txt");
+      }
     ?>
   </article>
 
