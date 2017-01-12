@@ -1,7 +1,7 @@
 <?php
-  $conn = mysqli_connect("localhost","root",'a789624');
-  mysqli_select_db($conn,"opentutorials");
-
+  require("lib/db/php");
+  require("config/config.php");
+  $conn=db_init($config["host"],$config["duser"],$config["dpw"],$config["dname"]);
   $sql = "SELECT * from user where name='".$_POST['author']."'";
   $result = mysqli_query($conn,$sql);
   if($result->num_rows==0){
