@@ -1,4 +1,5 @@
 <?php
+  //DB conn
   $conn = mysqli_connect("localhost","root",'a789624');
   mysqli_select_db($conn,"opentutorials");
   $result = mysqli_query($conn,"SELECT * FROM topic");
@@ -7,6 +8,7 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!--Css-->
   <link rel="stylesheet" type="text/css" href="http://localhost/style.css">
 </head>
 <body id="target">
@@ -17,8 +19,9 @@
 	<nav>
 	<ul>
   <?php
+    //
     while($row = mysqli_fetch_assoc($result)){
-      echo '<li><a href="http://localhost/index_html.php?id='.$row['id'].'">'.$row['title'].'</a></li>'."\n";
+      echo '<li><a href="http://localhost/index_html.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
     }
   ?>
 	</ul>
@@ -35,9 +38,11 @@
         $sql= 'SELECT topic.id,title,name,description from topic left join user on topic.author=user.id where topic.id='.$_GET['id'];
         $result = mysqli_query($conn, $sql);
         $row = mysqli_fetch_assoc($result);
-        echo '<h2>'.$row['title'].'</h2>';
-        echo '<p>'.$row['name'].'</p>';
-        echo $row['description'];
+        //user input security
+        echo '<h2>'.htmlspecialchars($row['title']).'</h2>';
+        echo '<p>'.htmlspecialchars($row['name']).'</p>';
+        //allow specified tags / deny excluded tags
+        echo strip_tags($row['description'],'<a><h1><h2><h3><h4><h5><h6><ol><ul><li>');
       }
     ?>
   </article>
