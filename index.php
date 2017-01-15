@@ -14,14 +14,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <!--Css-->
-  <link rel="stylesheet" type="text/css" href="http://localhost/style_BS.css">
-  <link href="http://localhost/bootstrap-3.3.4-dist/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/style_BS.css">
+  <link href="/bootstrap-3.3.4-dist/bootstrap-3.3.4-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body id="target">
   <div class="container">
   	<header class="jumbotron">
       <img src="http://ddolking.tv/layouts/Dk/img/title.png" alt="왕관" id="logo">
-  		<h1 class="text-center"><a href = "http://localhost/index_html.php">JavaScript</a></h1>
+  		<h1 class="text-center"><a href = "/index.php">JavaScript</a></h1>
   	</header>
     <!--bootstrap grid-->
     <div class="row">
@@ -29,7 +29,7 @@
     	<ul class="nav nav-pills nav-stacked">
       <?php
         while($row = mysqli_fetch_assoc($result)){
-          echo '<li><a href="http://localhost/index_html.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
+          echo '<li><a href="/index.php?id='.$row['id'].'">'.htmlspecialchars($row['title']).'</a></li>'."\n";
         }
       ?>
     	</ul>
@@ -56,7 +56,7 @@
             <input class="btn btn-default" type="button" value="white" onclick="document.getElementById('target').className='white'">
             <input class="btn btn-default" type="button" value="black" onclick="document.getElementById('target').className='black'">
           </div>
-          <a class="btn btn-success" href="http://localhost/write.php">쓰기</a>
+          <a class="btn btn-success" href="/write.php">쓰기</a>
         </div>
     	</div>
     </div>
@@ -64,7 +64,7 @@
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="http://localhost/bootstrap-3.3.4-dist/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
+  <script src="/bootstrap-3.3.4-dist/bootstrap-3.3.4-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
 

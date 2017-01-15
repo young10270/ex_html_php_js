@@ -1,0 +1,21 @@
+<html>
+  <body>
+  <ul>
+    <li><a href="http://localhost/index_html.php">http://localhost/index_html.php</a></li>
+    <!--밑의 두 방식은 localhost로 바뀌지 않음 / 상대경로방식-->
+    <li><a href="/index_html.php">/index_html.php</a></li>
+    <li><a href="../index_html.php">../index_html.php</a></li>
+  </ul>
+  <ul>
+    <li><a href="http://localhost/path/same.html">http://localhost/path/same.html</a></li>
+    <li><a href="./same.html">./same.html</a></li>
+    <li><a href="same.html">same.html</a></li>
+  </ul>
+  <ul>
+    <li><a href="http://localhost/path/sub/sub.html">http://localhost/path/sub/sub.html</a></li>
+    <li><a href="./sub/sub.html">./sub.sub.html</a></li>
+    <li><a href="sub/sub.html">sub/sub.html</a></li>
+    <li><a href="/path/sub/sub.html">/path/sub/sub.html</a></li>
+  </ul>
+  </body>
+</html>
